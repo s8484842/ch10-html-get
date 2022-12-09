@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+</head>
+<body>
+	<script>
+		// 彈跳視窗(Popup) : https://ithelp.ithome.com.tw/articles/10243643
+		window.alert('Welcome!!!');
+		// Get URL Parameters : https://www.sitepoint.com/get-url-parameters-with-javascript/
+		const queryString = window.location.search;
+		console.log(queryString);
+		const urlParams = new URLSearchParams(queryString);
+	</script>
+	
+	<h1 id='get_account'></h1>
+	<script>
+		const account = urlParams.get('account')
+		document.getElementById('get_account').innerHTML = 'Hello ' + account;
+	</script>
+	
+	<img id='headshot' src='' width='400' height='400' alt='沒有圖片' /><br />
+	<script>
+		// Image Source : https://spy-family.net/special/special9.php
+		const password = urlParams.get('password')
+		if(account == 'anya' && password == '123') // and(&&), or(||), not(!)
+		{
+			document.getElementById("headshot").src = 'https://spy-family.net/assets/img/special/episode2/03.png'
+		}
+		else
+		{
+			document.getElementById("headshot").src = 'https://spy-family.net/assets/img/special/episode11/06.png'
+		}
+	</script>
+	
+	<a href='index.html'><button>登出</button></a>
+</body>
+</html>
